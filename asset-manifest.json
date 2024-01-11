@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/pianoportfolio/static/css/main.f855e6bc.css",
+    "main.js": "/pianoportfolio/static/js/main.d06624b7.js",
+    "static/js/787.4ed7c726.chunk.js": "/pianoportfolio/static/js/787.4ed7c726.chunk.js",
+    "static/media/logo.svg": "/pianoportfolio/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/pianoportfolio/index.html",
+    "main.f855e6bc.css.map": "/pianoportfolio/static/css/main.f855e6bc.css.map",
+    "main.d06624b7.js.map": "/pianoportfolio/static/js/main.d06624b7.js.map",
+    "787.4ed7c726.chunk.js.map": "/pianoportfolio/static/js/787.4ed7c726.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.d06624b7.js"
+  ]
+}
