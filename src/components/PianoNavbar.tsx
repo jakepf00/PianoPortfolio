@@ -16,8 +16,8 @@ export class PianoNavbar extends React.Component<MyProps, MyState> {
                         </Navbar.Brand>
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link>About</Nav.Link>
-                                <Nav.Link>Listen</Nav.Link>
+                                <Nav.Link href="#about">About</Nav.Link>
+                                <Nav.Link href="#listen">Listen</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
