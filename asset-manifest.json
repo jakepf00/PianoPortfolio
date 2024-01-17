@@ -1,15 +1,14 @@
 {
   "files": {
-    "main.css": "/pianoportfolio/static/css/main.f855e6bc.css",
-    "main.js": "/pianoportfolio/static/js/main.886e3b42.js",
-    "static/js/787.4ed7c726.chunk.js": "/pianoportfolio/static/js/787.4ed7c726.chunk.js",
+    "main.css": "/pianoportfolio/static/css/main.fb0ad486.css",
+    "main.js": "/pianoportfolio/static/js/main.91795e2c.js",
+    "static/media/MainPicture.jpg": "/pianoportfolio/static/media/MainPicture.b1a7fb352e808d74d49a.jpg",
     "index.html": "/pianoportfolio/index.html",
-    "main.f855e6bc.css.map": "/pianoportfolio/static/css/main.f855e6bc.css.map",
-    "main.886e3b42.js.map": "/pianoportfolio/static/js/main.886e3b42.js.map",
-    "787.4ed7c726.chunk.js.map": "/pianoportfolio/static/js/787.4ed7c726.chunk.js.map"
+    "main.fb0ad486.css.map": "/pianoportfolio/static/css/main.fb0ad486.css.map",
+    "main.91795e2c.js.map": "/pianoportfolio/static/js/main.91795e2c.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.886e3b42.js"
+    "static/css/main.fb0ad486.css",
+    "static/js/main.91795e2c.js"
   ]
 }
