@@ -1,19 +1,39 @@
+import Papa, { ParseResult } from "papaparse"
 import React, { FC, useEffect, useState } from "react";
 import RepListCSV from '../Assets/Files/RepertoireList.csv'
 
+
+type piece = {
+    name: string;
+    composer: string;
+    era: string;
+}
+type repList = {
+    pieces: piece[];
+}
+
 const Repertoire: FC<{}> = () => {
-    const [text, setText] = useState<any | null>(null);
+    const [repertoire, setRepData] = React.useState<repList | null>(null);
 
     const loadCSV = function () {
         fetch(RepListCSV)
             .then(response => response.text())
             .then(responseText => {
-                setText(responseText);
+                let results: ParseResult<string[]> = Papa.parse(responseText);
+                let returnData: repList = { pieces: [] }
+                results.data.map((d) => {
+                    let newPiece: piece = {} as piece
+                    newPiece.composer = d[0]
+                    newPiece.name = d[1]
+                    newPiece.era = d[2]
+                    returnData.pieces.push(newPiece);
+                });
+                setRepData(returnData)
             })
     };
 
+    let ignore = false;
     useEffect(() => {
-        let ignore = false;
         if (!ignore) loadCSV()
         return () => { ignore = true; }
     }, []);
@@ -21,8 +41,22 @@ const Repertoire: FC<{}> = () => {
     return (
         <section id="repertoire">
             <h1>Rep list</h1>
-            <h2>Rep:</h2>
-            <pre>{text}</pre>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Composer</th>
+                        <th>Piece</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {repertoire?.pieces.map((piece, index) => (
+                        <tr key={index}>
+                            <td>{piece.composer}</td>
+                            <td>{piece.name}</td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
         </section>
     );
 };
