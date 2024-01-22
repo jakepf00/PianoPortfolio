@@ -2,12 +2,14 @@ import Papa, { ParseResult } from "papaparse"
 import React, { FC, useEffect, useState } from "react";
 import RepListCSV from '../Assets/Files/RepertoireList.csv'
 import Table from 'react-bootstrap/Table';
+import VideoModal from './VideoModal'
 
 
 type piece = {
     name: string;
     composer: string;
     era: string;
+    youtubeLink: string;
 }
 type repList = {
     pieces: piece[];
@@ -15,6 +17,17 @@ type repList = {
 
 const Repertoire: FC<{}> = () => {
     const [repertoire, setRepData] = React.useState<repList | null>(null);
+    const [modalIsOpen, setModalIsOpen] = React.useState(false);
+    const [selectedPiece, setSelectedPiece] = useState<piece | undefined>(undefined);
+
+    const openModal = (selectedPiece: piece) => {
+        setSelectedPiece(selectedPiece);
+        setModalIsOpen(true);
+    };
+    const closeModal = () => {
+        setSelectedPiece(undefined);
+        setModalIsOpen(false);
+    };
 
     const loadCSV = function () {
         fetch(RepListCSV)
@@ -27,6 +40,7 @@ const Repertoire: FC<{}> = () => {
                     newPiece.composer = d[0]
                     newPiece.name = d[1]
                     newPiece.era = d[2]
+                    newPiece.youtubeLink = d[3];
                     returnData.pieces.push(newPiece);
                 });
                 setRepData(returnData)
@@ -54,11 +68,12 @@ const Repertoire: FC<{}> = () => {
                         {repertoire?.pieces.map((piece, index) => (
                             <tr key={index}>
                                 <td>{piece.composer}</td>
-                                <td>{piece.name}</td>
+                                <td><button onClick={() => openModal(piece)}>{piece.name}</button></td>
                             </tr>
                         ))}
                     </tbody>
                 </Table>
+                <VideoModal isOpen={modalIsOpen} onRequestClose={closeModal} pieceToPlay={selectedPiece} />
             </div>
         </section>
     );
