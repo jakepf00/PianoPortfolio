@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import ReactModal from "react-modal";
+import '../CSS/Video.css';
 
 type piece = {
   name: string;
@@ -20,14 +21,17 @@ const VideoModal: FC<ModalProps> = ({ isOpen, onRequestClose, pieceToPlay }) => 
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       contentLabel="Video player modal">
-      <h1>{pieceToPlay?.name}</h1>
-      <div className="responsive-embed">
-        <iframe
-          src={pieceToPlay?.youtubeLink}
-          allowFullScreen />
-
+      <div className="modal-header">
+        <h2>{pieceToPlay?.name}</h2>
+        <button type="button" className="btn-close" aria-label="Close" onClick={onRequestClose} />
       </div>
-      <button onClick={onRequestClose}>Close</button>
+      <div className="modal-body">
+        <div className="video-container">
+          <iframe
+            src={pieceToPlay?.youtubeLink}
+            allowFullScreen />
+        </div>
+      </div>
     </ReactModal>
   );
 };
