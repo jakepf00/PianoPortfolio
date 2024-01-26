@@ -1,5 +1,6 @@
+import Button from "react-bootstrap/Button"
+import Modal from "react-bootstrap/Modal"
 import React, { FC } from "react";
-import ReactModal from "react-modal";
 import '../CSS/Video.css';
 
 type piece = {
@@ -17,22 +18,24 @@ interface ModalProps {
 
 const VideoModal: FC<ModalProps> = ({ isOpen, onRequestClose, pieceToPlay }) => {
   return (
-    <ReactModal
-      isOpen={isOpen}
-      onRequestClose={onRequestClose}
-      contentLabel="Video player modal">
-      <div className="modal-header">
-        <h2>{pieceToPlay?.name}</h2>
-        <button type="button" className="btn-close" aria-label="Close" onClick={onRequestClose} />
-      </div>
-      <div className="modal-body">
-        <div className="video-container">
-          <iframe
-            src={pieceToPlay?.youtubeLink}
-            allowFullScreen />
-        </div>
-      </div>
-    </ReactModal>
+    <Modal
+      show={isOpen}
+      onHide={onRequestClose}
+      size="xl"
+      centered>
+      <Modal.Header closeButton>
+        <Modal.Title>{pieceToPlay?.name}</Modal.Title>
+      </Modal.Header>
+      <Modal.Body className="video-container">
+        <img src="https://placehold.co/160x90" width="100%"/>
+        <iframe
+          src={pieceToPlay?.youtubeLink}
+          allowFullScreen />
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={onRequestClose}>Close</Button>
+      </Modal.Footer>
+    </Modal>
   );
 };
 export default VideoModal;
