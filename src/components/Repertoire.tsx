@@ -1,3 +1,4 @@
+import Button from 'react-bootstrap/Button'
 import Papa, { ParseResult } from "papaparse"
 import React, { FC, useEffect, useState } from "react";
 import RepListCSV from '../Assets/Files/RepertoireList.csv'
@@ -56,7 +57,7 @@ const Repertoire: FC<{}> = () => {
     return (
         <section id="repertoire">
             <div className="container">
-                <h1>Rep list</h1>
+                <h1>Repertoire List</h1>
                 <Table striped bordered hover>
                     <thead>
                         <tr>
@@ -67,8 +68,8 @@ const Repertoire: FC<{}> = () => {
                     <tbody>
                         {repertoire?.pieces.map((piece, index) => (
                             <tr key={index}>
-                                <td>{piece.composer}</td>
-                                <td><button onClick={() => openModal(piece)}>{piece.name}</button></td>
+                                <td style={{verticalAlign:"middle"}}>{piece.composer}</td>
+                                <td><Button variant="link" onClick={() => openModal(piece)}>{piece.name}</Button></td>
                             </tr>
                         ))}
                     </tbody>
