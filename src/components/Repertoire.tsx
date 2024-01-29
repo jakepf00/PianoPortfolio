@@ -5,7 +5,6 @@ import RepListCSV from '../Assets/Files/RepertoireList.csv'
 import Table from 'react-bootstrap/Table';
 import VideoModal from './VideoModal'
 
-
 type piece = {
     name: string;
     composer: string;

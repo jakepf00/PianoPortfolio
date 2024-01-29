@@ -1,8 +1,7 @@
 import Button from "react-bootstrap/Button"
-import Image from "react-bootstrap/Image"
 import Modal from "react-bootstrap/Modal"
 import React, { FC } from "react";
-import '../CSS/Video.css';
+import YouTubeEmbed from "./YouTubeEmbed"
 
 type piece = {
   name: string;
@@ -18,6 +17,11 @@ interface ModalProps {
 }
 
 const VideoModal: FC<ModalProps> = ({ isOpen, onRequestClose, pieceToPlay }) => {
+  let videoLink: string = "";
+  if (pieceToPlay !== undefined) {
+    videoLink = pieceToPlay.youtubeLink;
+  }
+
   return (
     <Modal
       show={isOpen}
@@ -27,14 +31,11 @@ const VideoModal: FC<ModalProps> = ({ isOpen, onRequestClose, pieceToPlay }) => 
       <Modal.Header closeButton>
         <Modal.Title>{pieceToPlay?.name}</Modal.Title>
       </Modal.Header>
-      {pieceToPlay?.youtubeLink != "NA" &&
-        <Modal.Body className="video-container">
-          <Image src="https://placehold.co/160x90" width="100%" style={{ visibility: "hidden" }} />
-          <iframe
-            src={pieceToPlay?.youtubeLink}
-            allowFullScreen />
+      {pieceToPlay?.youtubeLink !== "NA" &&
+        <Modal.Body>
+          <YouTubeEmbed videoLink={videoLink} />
         </Modal.Body>}
-      {pieceToPlay?.youtubeLink == "NA" &&
+      {pieceToPlay?.youtubeLink === "NA" &&
         <Modal.Body className="video-container">
           <p>Video coming soon...</p>
         </Modal.Body>}
