@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import '../CSS/App.css';
-import '../CSS/Style.css'
-import About from './About'
-import Listen from './Listen'
-import PianoNavbar from './PianoNavbar'
-import Repertoire from './Repertoire'
+import About from "./About";
+import Listen from "./Listen";
+import PianoNavbar from "./PianoNavbar";
+import React from "react";
+import Repertoire from "./Repertoire";
+import "../CSS/App.css";
+import "../CSS/Style.css";
 
 type TabsType = {
   label: string;
@@ -31,7 +31,7 @@ const tabs: TabsType = [
 ];
 
 export default function App() {
-  const [selectedTab, setSelectedTab] = useState<number>(tabs[0].index);
+  const [selectedTab, setSelectedTab] = React.useState<number>(tabs[0].index);
 
   return (
     <div className="App">

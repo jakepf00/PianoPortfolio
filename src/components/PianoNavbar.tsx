@@ -1,12 +1,12 @@
-import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
-import React, { FC } from "react";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import React from "react";
 
 type NavProps = {
     tabs: {
         label: string;
         index: number;
-        Component: FC<{ index: number }>;
+        Component: React.FC<{ index: number }>;
     }[];
     selectedTab: number;
     onClick: (index: number) => void;
@@ -14,7 +14,7 @@ type NavProps = {
     className?: string;
 };
 
-const PianoNavbar: FC<NavProps> = ({
+const PianoNavbar: React.FC<NavProps> = ({
     className = "nav-component",
     tabs = [],
     selectedTab = 0,

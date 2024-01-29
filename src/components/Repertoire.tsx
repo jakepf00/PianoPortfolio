@@ -1,9 +1,10 @@
-import Button from 'react-bootstrap/Button'
-import Papa, { ParseResult } from "papaparse"
-import React, { FC, useEffect, useState } from "react";
-import RepListCSV from '../Assets/Files/RepertoireList.csv'
-import Table from 'react-bootstrap/Table';
-import VideoModal from './VideoModal'
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Papa from "papaparse";
+import React from "react";
+import RepListCSV from "../Assets/Files/RepertoireList.csv";
+import Table from "react-bootstrap/Table";
+import VideoModal from "./VideoModal";
 
 type piece = {
     name: string;
@@ -15,10 +16,10 @@ type repList = {
     pieces: piece[];
 }
 
-const Repertoire: FC<{}> = () => {
+const Repertoire: React.FC<{}> = () => {
     const [repertoire, setRepData] = React.useState<repList | null>(null);
     const [modalIsOpen, setModalIsOpen] = React.useState(false);
-    const [selectedPiece, setSelectedPiece] = useState<piece | undefined>(undefined);
+    const [selectedPiece, setSelectedPiece] = React.useState<piece | undefined>(undefined);
 
     const openModal = (selectedPiece: piece) => {
         setSelectedPiece(selectedPiece);
@@ -33,29 +34,29 @@ const Repertoire: FC<{}> = () => {
         fetch(RepListCSV)
             .then(response => response.text())
             .then(responseText => {
-                let results: ParseResult<string[]> = Papa.parse(responseText);
-                let returnData: repList = { pieces: [] }
-                results.data.map((d) => {
-                    let newPiece: piece = {} as piece
-                    newPiece.composer = d[0]
-                    newPiece.name = d[1]
-                    newPiece.era = d[2]
+                let results: Papa.ParseResult<string[]> = Papa.parse(responseText);
+                let returnData: repList = { pieces: [] };
+                results.data.forEach((d) => {
+                    let newPiece: piece = {} as piece;
+                    newPiece.composer = d[0];
+                    newPiece.name = d[1];
+                    newPiece.era = d[2];
                     newPiece.youtubeLink = d[3];
                     returnData.pieces.push(newPiece);
                 });
-                setRepData(returnData)
-            })
+                setRepData(returnData);
+            });
     };
 
-    let ignore = false;
-    useEffect(() => {
-        if (!ignore) loadCSV()
-        return () => { ignore = true; }
+    let csvLoaded = false;
+    React.useEffect(() => {
+        if (!csvLoaded) loadCSV();
+        return () => { csvLoaded = true; };
     }, []);
 
     return (
         <section id="repertoire">
-            <div className="container">
+            <Container>
                 <h1>Repertoire List</h1>
                 <Table striped bordered hover>
                     <thead>
@@ -74,7 +75,7 @@ const Repertoire: FC<{}> = () => {
                     </tbody>
                 </Table>
                 <VideoModal isOpen={modalIsOpen} onRequestClose={closeModal} pieceToPlay={selectedPiece} />
-            </div>
+            </Container>
         </section>
     );
 };

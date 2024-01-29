@@ -1,7 +1,7 @@
-import Button from "react-bootstrap/Button"
-import Modal from "react-bootstrap/Modal"
-import React, { FC } from "react";
-import YouTubeEmbed from "./YouTubeEmbed"
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
+import React from "react";
+import YouTubeEmbed from "./YouTubeEmbed";
 
 type piece = {
   name: string;
@@ -16,7 +16,7 @@ interface ModalProps {
   pieceToPlay?: piece;
 }
 
-const VideoModal: FC<ModalProps> = ({ isOpen, onRequestClose, pieceToPlay }) => {
+const VideoModal: React.FC<ModalProps> = ({ isOpen, onRequestClose, pieceToPlay }) => {
   let videoLink: string = "";
   if (pieceToPlay !== undefined) {
     videoLink = pieceToPlay.youtubeLink;

@@ -1,10 +1,10 @@
-import Container from "react-bootstrap/Container"
-import Col from "react-bootstrap/Col"
-import React, { FC } from "react";
-import Row from "react-bootstrap/Row"
-import YouTubeEmbed from './YouTubeEmbed'
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container";
+import React from "react";
+import Row from "react-bootstrap/Row";
+import YouTubeEmbed from "./YouTubeEmbed";
 
-const Listen: FC<{}> = () => {
+const Listen: React.FC<{}> = () => {
     return (
         <section id="listen">
             <h1>Featured Videos</h1>

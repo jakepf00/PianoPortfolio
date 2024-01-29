@@ -1,11 +1,14 @@
-import React, { FC } from "react";
-import MainPicture from '../Assets/Images/MainPicture.jpg'
+import Container from "react-bootstrap/Container";
+import Image from "react-bootstrap/Image";
+import React from "react";
+import MainPicture from "../Assets/Images/MainPicture.jpg";
 
-const About: FC<{}> = () => {
+
+const About: React.FC<{}> = () => {
     return (
         <section id="about">
-            <img src={MainPicture} alt="Main picture" className="w-100" />
-            <div className="container">
+            <Image src={MainPicture} width="100%" />
+            <Container>
                 <h1>Jacob Pfeifer Piano</h1>
                 <p>Jacob Pfeifer is a pianist who excels in performance of Romantic and Contemporary piano music. Jacob has found success in competition, collaborative performances, and ensemble playing. He has also shown commitment to academics, where he continues to refine his playing and increase his understanding of the piano repertoire.</p>
                 <p>Throughout his musical journey, Jacob has excelled in a multitude of competitions. He has received recognition in the Music Teachers National Association Young Artist Competition, the South Dakota State University Concerto-Aria Competition, and the Minnesota Music Teachers Association Piano Contest. These accolades not only underscore his technical brilliance but also highlight his ability to convey deep emotions through music.</p>
@@ -14,7 +17,7 @@ const About: FC<{}> = () => {
                 <p>Building upon his undergraduate success, Jacob has embarked on a new chapter in his musical career. He is currently pursuing a Master's degree in piano performance at the University of Nebraska-Lincoln. Under the tutelage of Paul Barnes, Jacob is working to refine his artistry and deepen his understanding of the piano repertoire. This pursuit represents a significant step in his continued growth as a pianist and underscores his commitment to developing his skills as a classical musician.</p>
                 <p>Jacob Pfeifer is a pianist of extraordinary talent and promise. His dedication to his craft, coupled with his diverse accomplishments in competitions, collaborative endeavors, and academic pursuits, marks him as a rising star in the world of classical piano. Jacob's journey promises to be one of inspiration and musical excellence.</p>
                 <br />
-            </div>
+            </Container>
         </section>
     );
 };
