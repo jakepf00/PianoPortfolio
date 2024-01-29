@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/pianoportfolio/static/css/main.c18fec6c.css",
-    "main.js": "/pianoportfolio/static/js/main.dbbcc5fd.js",
+    "main.css": "/pianoportfolio/static/css/main.863e2256.css",
+    "main.js": "/pianoportfolio/static/js/main.be171fea.js",
     "static/media/MainPicture.jpg": "/pianoportfolio/static/media/MainPicture.b1a7fb352e808d74d49a.jpg",
     "static/media/RepertoireList.csv": "/pianoportfolio/static/media/RepertoireList.a9cd749209f89536766c.csv",
     "index.html": "/pianoportfolio/index.html",
-    "main.c18fec6c.css.map": "/pianoportfolio/static/css/main.c18fec6c.css.map",
-    "main.dbbcc5fd.js.map": "/pianoportfolio/static/js/main.dbbcc5fd.js.map"
+    "main.863e2256.css.map": "/pianoportfolio/static/css/main.863e2256.css.map",
+    "main.be171fea.js.map": "/pianoportfolio/static/js/main.be171fea.js.map"
   },
   "entrypoints": [
-    "static/css/main.c18fec6c.css",
-    "static/js/main.dbbcc5fd.js"
+    "static/css/main.863e2256.css",
+    "static/js/main.be171fea.js"
   ]
 }
