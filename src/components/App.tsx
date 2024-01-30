@@ -1,4 +1,5 @@
 import About from "./About";
+import Contact from "./Contact";
 import Listen from "./Listen";
 import PianoNavbar from "./PianoNavbar";
 import React from "react";
@@ -27,6 +28,11 @@ const tabs: TabsType = [
     label: "Repertoire",
     index: 3,
     Component: Repertoire
+  },
+  {
+    label: "Contact",
+    index: 4,
+    Component: Contact
   }
 ];
 
