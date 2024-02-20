@@ -20,3 +20,10 @@ Some features implemented include:
 - CSV parsing<!-- Link papaparse here? -->
 - Styled with React-Bootstrap and CSS
 <!-- Bootstrapped with [Create React App](https://github.com/facebook/create-react-app)? -->
+
+## Planned Features
+
+Future improvements include:
+- Functioning contact page
+- Extracted types to improve code reusability
+- Mobile device support
