@@ -24,30 +24,32 @@ const PianoNavbar: React.FC<NavProps> = ({
     const Panel = tabs && tabs.find((tab) => tab.index === selectedTab);
 
     return (
-        <header className={"header"}>
-            <Navbar expand="sm" className="bg-body-tertiary">
-                <Navbar.Brand>Jacob Pfeifer Piano</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        {tabs.map((tab) => (
-                            <Nav.Link
-                                className={selectedTab === tab.index ? "active" : ""}
-                                onClick={() => onClick(tab.index)}
-                                key={tab.index}
-                                type="button"
-                                role="tab"
-                                aria-selected={selectedTab === tab.index}
-                                aria-controls={`tabpanel-${tab.index}`}
-                                tabIndex={selectedTab === tab.index ? 0 : -1}
-                                id={`btn-${tab.index}`}
-                            >
-                                {tab.label}
-                            </Nav.Link>
-                        ))}
-                    </Nav>
-                </Navbar.Collapse>
-            </Navbar>
+        <div>
+            <header className={"header"}>
+                <Navbar expand="sm" className="bg-body-tertiary">
+                    <Navbar.Brand>Jacob Pfeifer Piano</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            {tabs.map((tab) => (
+                                <Nav.Link
+                                    className={selectedTab === tab.index ? "active" : ""}
+                                    onClick={() => onClick(tab.index)}
+                                    key={tab.index}
+                                    type="button"
+                                    role="tab"
+                                    aria-selected={selectedTab === tab.index}
+                                    aria-controls={`tabpanel-${tab.index}`}
+                                    tabIndex={selectedTab === tab.index ? 0 : -1}
+                                    id={`btn-${tab.index}`}
+                                >
+                                    {tab.label}
+                                </Nav.Link>
+                            ))}
+                        </Nav>
+                    </Navbar.Collapse>
+                </Navbar>
+            </header>
             <div
                 role="tabpanel"
                 aria-labelledby={`btn-${selectedTab}`}
@@ -55,7 +57,7 @@ const PianoNavbar: React.FC<NavProps> = ({
             >
                 {Panel && <Panel.Component index={selectedTab} />}
             </div>
-        </header>
+        </div>
     );
 };
 export default PianoNavbar;
