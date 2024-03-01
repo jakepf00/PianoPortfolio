@@ -25,10 +25,9 @@ const PianoNavbar: React.FC<NavProps> = ({
 
     return (
         <header className={"header"}>
-            <Navbar>
-                <Navbar.Brand>
-                    Jacob Pfeifer Piano
-                </Navbar.Brand>
+            <Navbar expand="sm" className="bg-body-tertiary">
+                <Navbar.Brand>Jacob Pfeifer Piano</Navbar.Brand>
+                <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         {tabs.map((tab) => (
