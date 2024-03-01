@@ -10,18 +10,18 @@ const Listen: React.FC<{}> = () => {
             <h1>Featured Videos</h1>
             <Container>
                 <Row>
-                    <Col>
+                    <Col lg>
                         <YouTubeEmbed videoLink="https://youtube.com/embed/VGSB2iKT9Ws" />
                     </Col>
-                    <Col>
+                    <Col lg>
                         <YouTubeEmbed videoLink="https://youtube.com/embed/6dQvl02_IvQ" />
                     </Col>
                 </Row>
                 <Row>
-                    <Col>
-                    <YouTubeEmbed videoLink="https://youtube.com/embed/DDUeJZBZdJY" />
+                    <Col lg>
+                        <YouTubeEmbed videoLink="https://youtube.com/embed/DDUeJZBZdJY" />
                     </Col>
-                    <Col>
+                    <Col lg>
                         <YouTubeEmbed videoLink="https://youtube.com/embed/ZWKlFfFj6xs" />
                     </Col>
                 </Row>
